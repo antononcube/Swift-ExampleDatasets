@@ -3,7 +3,7 @@ import TabularData
 
 public struct ExampleDatasets {
     
-    static var dfRdatasets: DataFrame = DataFrame()
+    static public var dfRdatasets: DataFrame = DataFrame()
     
     public init() {
         let dataURL = Bundle.module.url(forResource: "dfRdatasets", withExtension: "csv")
@@ -25,7 +25,7 @@ public struct ExampleDatasets {
     }
     
     
-    static func retrieveDataset(itemSpec: String = "", packageSpec: String = "", keep: Bool = false) -> DataFrame? {
+    static public func retrieveDataset(itemSpec: String = "", packageSpec: String = "", keep: Bool = false) -> DataFrame? {
         
         //var objRow: DataFrame.Row;
         var objSlice: DataFrame.Slice;
