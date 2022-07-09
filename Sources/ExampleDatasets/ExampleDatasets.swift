@@ -1,27 +1,33 @@
 import Foundation
 import TabularData
 
+
+
 public struct ExampleDatasets {
     
-    static public var dfRdatasets: DataFrame = DataFrame()
-    
-    public init() {
+
+    public static var dfRdatasets: DataFrame {
+
         let dataURL = Bundle.module.url(forResource: "dfRdatasets", withExtension: "csv")
-        
+
         let fname: String = (dataURL?.absoluteString)!.replacingOccurrences(of: "file://", with: "");
-        
+
         let options = CSVReadingOptions(hasHeaderRow: true, delimiter: ",")
-        guard let fileUrl = URL(string: fname) else {
-            fatalError("Error creating dfRdatasets URL.")
-        }
+
+        let fileUrl = URL(fileURLWithPath: fname)
         
-        ExampleDatasets.dfRdatasets = try! DataFrame(
+        let data = try! DataFrame(
             contentsOfCSVFile: fileUrl,
             types : ["Package" : .string , "Item" : .string, "Title" : .string,
                      "Rows" : .integer, "Cols" : .integer, "n_binary" : .integer,
                      "n_character"  : .integer, "n_factor" : .integer, "n_logical"  : .integer, "n_numeric"  : .integer,
                      "CSV" : .string, "Doc" : .string],
             options: options)
+        
+        return data
+    }
+    
+    public init() {
     }
     
     

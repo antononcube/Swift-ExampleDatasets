@@ -2,8 +2,16 @@ import XCTest
 @testable import ExampleDatasets
 
 final class ExampleDatasetsTests: XCTestCase {
-    func testExample() throws {
-
-      //XCTAssertEqual(ExampleDatasets().text, "Hello, World!")
+    func testMetadata() throws {
+        
+        XCTAssertTrue(ExampleDatasets.dfRdatasets.shape.rows > 1000)
+    }
+    
+    func testRetrieval() throws {
+        
+        let dsIris = ExampleDatasets.retrieveDataset(itemSpec: "iris3")
+        
+        XCTAssertTrue(dsIris!.shape.rows >= 50)
+        XCTAssertTrue(dsIris!.shape.columns >= 12)
     }
 }
