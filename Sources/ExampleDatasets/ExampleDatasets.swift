@@ -5,7 +5,7 @@ public struct ExampleDatasets {
     
     static var dfRdatasets: DataFrame = DataFrame()
     
-    init() {
+    public init() {
         let dataURL = Bundle.module.url(forResource: "dfRdatasets", withExtension: "csv")
         
         let fname: String = (dataURL?.absoluteString)!.replacingOccurrences(of: "file://", with: "");
