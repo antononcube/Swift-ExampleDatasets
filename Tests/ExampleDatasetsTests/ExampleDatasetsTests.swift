@@ -15,4 +15,11 @@ final class ExampleDatasetsTests: XCTestCase {
         XCTAssertTrue(dsIris.shape.rows >= 50)
         XCTAssertTrue(dsIris.shape.columns >= 12)
     }
+    
+    func testMultipleSetsFound() throws {
+        
+        let dsRes: DataFrame? = ExampleDatasets.retrieveDataset(itemSpec: "titanic")
+            
+        XCTAssertTrue(dsRes == nil)
+    }
 }
