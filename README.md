@@ -10,6 +10,8 @@ the repository
 This package follows the design of the [Raku](https://raku.org) and Python packages
 with the same name; see \[AAr1, AAp1\].
 
+------------------------------------------------------------------------
+
 ## Usage examples
 
 Here is an example (playground) code:
