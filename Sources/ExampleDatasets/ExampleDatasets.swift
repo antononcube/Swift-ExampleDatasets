@@ -60,8 +60,8 @@ public struct ExampleDatasets {
             return nil
         }
         
-        let csvLink = String(describing: ExampleDatasets.dfRdatasets["CSV"][0])
-        
+        let csvLink = String(describing: objSlice["CSV"].first!!)
+
         let optionsURL = CSVReadingOptions(hasHeaderRow: true, delimiter: ",")
         
         guard let fileURL = URL(string: csvLink) else {

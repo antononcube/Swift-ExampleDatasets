@@ -1,4 +1,5 @@
 import XCTest
+import TabularData
 @testable import ExampleDatasets
 
 final class ExampleDatasetsTests: XCTestCase {
@@ -9,9 +10,9 @@ final class ExampleDatasetsTests: XCTestCase {
     
     func testRetrieval() throws {
         
-        let dsIris = ExampleDatasets.retrieveDataset(itemSpec: "iris3")
-        
-        XCTAssertTrue(dsIris!.shape.rows >= 50)
-        XCTAssertTrue(dsIris!.shape.columns >= 12)
+        let dsIris: DataFrame = ExampleDatasets.retrieveDataset(itemSpec: "iris3")!
+            
+        XCTAssertTrue(dsIris.shape.rows >= 50)
+        XCTAssertTrue(dsIris.shape.columns >= 12)
     }
 }
